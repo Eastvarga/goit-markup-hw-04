@@ -1,0 +1,501 @@
+/*
+ палитра макета
+ Основной цвет текста #757575;
+ вторичный цвет #212121; 
+ цвет акцент #2196F3;
+ второй цвет текста #FFFFFF;
+ цвет футер ссылки rgba(255, 255, 255, 0.6);
+ 
+ вторичный цвет фона #2F303A;
+ третий цвет фона #F5F4FA;
+ 
+*/
+/* устанавливаем тип блочной модели для документа */
+html {
+  box-sizing: border-box;
+}
+/* включаем наследование всеми єлементами типа блочной модели */
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+/* убрал аутлайн при фокусе */
+*:focus {
+  outline-style: none;
+}
+
+:root {
+  --primary-text-color: #757575;
+  --title-text-color: #212121;
+  --accent-color: #2196f3;
+  --white-color: #ffffff;
+
+  --alt-bg-color: #f5f4fa;
+  --secondary-bg-color: #2f303a;
+  --footer-link-color: rgba(255, 255, 255, 0.6);
+}
+body {
+  background-color: var(--white-color);
+  color: var(--primary-text-color);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* убираем подчеркивание у ссылок, включаем наследование от родителя*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* убираем "точечки", марджины и левый паддинг в списках */
+.list {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+/* header */
+.header {
+  background-color: var(--white-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  /* добавлям линии согласно макета */
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ececec;
+}
+/* создаем контейнер для контента */
+.container,
+.hero-container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* создаем флекс элементы,
+ даем возможность переноса элементов на другую строку */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: teal; */
+}
+/* центрируем элементы в хедере по вертикали, 
+ добавляем паддинги*/
+.header .container {
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+/* элементы хедера превращаем во флекс элементы */
+.nav-links,
+.contact {
+  display: flex;
+}
+/* раскрасим логотип */
+.logo {
+  margin-right: 93px;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+.header .logo {
+  color: var(--title-text-color);
+}
+.footer .logo {
+  color: var(--white-color);
+}
+.logo-head {
+  color: var(--accent-color);
+}
+/* навигация по сайту */
+.nav-links li + li {
+  margin-left: 50px;
+}
+/* расширяем зону активации ссылок в шапке для лучшего юзабилити */
+.header .link {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* nav-links <a> определяем цвет навигации*/
+.nav-links .link {
+  color: var(--title-text-color);
+}
+/* header, footer links hover, focus цвет при наведении, фокусе  */
+.nav-links .link.current,
+.nav-links .link:hover,
+.nav-links .link:focus,
+.contact .link:hover,
+.contact .link:focus,
+.address .link:hover,
+.address .link:focus {
+  color: var(--accent-color);
+}
+/* контактная информация */
+.contact {
+  margin-left: auto;
+}
+.contact li + li {
+  margin-left: 50px;
+}
+/* Секция героя */
+.hero-center {
+  align-self: center;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+/* центрируем текст в герое */
+.hero {
+  text-align: center;
+}
+
+/* hero, footer заливка фона*/
+.hero,
+.footer {
+  background-color: var(--secondary-bg-color);
+}
+
+/* hero title заголовок. Убираем дефолтные марджины */
+.hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  color: var(--white-color);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+/* hero button кнопка */
+.hero-button {
+  display: inline-block;
+  /* форма кнопки */
+  min-width: 200px;
+  min-height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 32px;
+  padding-left: 32px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+}
+/* цвет при ховере, фокусе согласно макета */
+.hero-button:hover,
+.hero-button:focus {
+  background-color: #188ce8;
+}
+/* hide title пока спрятаны заголовки белым цветом  */
+.hide-head {
+  color: var(--white-color);
+}
+
+/* Our features 
+Наши особенности */
+/* создаем объекты флекс и активируем возможность переноса строки для них */
+.our-features,
+.our-features li {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  text-align: left;
+}
+/* отступы между секциями */
+.our-features {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+/* устанавливаем ширину контента для элементов */
+.our-features li {
+  width: calc((100% - 30px * 3) / 4);
+}
+/* задаем отступы между элементами, марджины */
+.our-features li:not(:nth-child(4n + 1)) {
+  margin-left: 30px;
+}
+
+/* features, our team, projects titles цвет текста заголовков*/
+.our-features .title,
+.our-team .title,
+.projects .title {
+  color: var(--title-text-color);
+}
+/* убираем марджины у абзацев */
+.our-features p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* задаем шрифты, убираем дефолтные марджины  */
+.our-features .title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* What-we-do 
+Чем мы занимаемся*/
+/* section title заголовок: шрифты, убираем дефолтные марджины*/
+.section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+/* делаем из спимков-элементов флекс элементы, 
+включаем перенос строки для них,
+убираем дефолтные значения марджина и паддинга*/
+.whatwedo,
+.our-team {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+/* отступ до следующей секции */
+.whatwedo {
+  padding-bottom: 94px;
+}
+/* устанавливаем ширину контента */
+.whatwedo li {
+  width: calc((100% - 30px * 2) / 3);
+}
+/* задаем отступы между элементами контента марджины*/
+.whatwedo li:not(:nth-child(3n + 1)) {
+  margin-left: 30px;
+}
+
+/* Our team */
+/* флекс элементы списку задали ранее */
+/* задаем шрифт и цвет секции */
+.section.team {
+  background-color: var(--alt-bg-color);
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+/* задаем отступ до футера */
+.our-team {
+  padding-bottom: 94px;
+}
+/* задаем ширину контента, тень карточке,и ориентацию текста */
+.our-team li {
+  width: calc((100% - 30px * 3) / 4);
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  text-align: center;
+}
+/* задаем каждому не первому в строке элементу левый марджин */
+.our-team li:not(:nth-child(4n + 1)) {
+  margin-left: 30px;
+}
+/* our team img задаем нижний марджин картинке*/
+.our-team img {
+  margin-bottom: 30px;
+}
+/* our team title font */
+.our-team .title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-weight: 500;
+}
+/* отступ для формы карточки */
+.our-team p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}
+
+/* footer */
+/* делаем контент лого+адресс шириной на четверть от ширины страницы */
+.div-address {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc((100% - 30px * 3) / 4);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+/* убираем дефолтные отступы не полагаемся на наследование */
+.footer .logo {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: auto;
+}
+/* убираем дефолтные отступы не полагаемся на наследование */
+.address {
+  display: block;
+  width: 220px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: auto;
+}
+/* задаем ссылкам вертикальные отступы */
+.address a {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 9px;
+}
+
+/* задаем фильтрбоксу вертикальные отступы 
+с центрированием элементов по горизонтали*/
+.container.filter {
+  padding-top: 94px;
+  padding-bottom: 50px;
+  justify-content: center;
+}
+/* filter button задаем шрифты и геометрию кнопок */
+.button {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 22px;
+  padding-right: 22px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  color: var(--title-text-color);
+  background-color: var(--alt-bg-color);
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+}
+/* задаем отступы для всех кроме последней кнопок*/
+.button:not(:last-child) {
+  margin-right: 8px;
+}
+/* окраска при ховере фокусе */
+.button:hover,
+.button:focus {
+  color: var(--white-color);
+  background-color: var(--accent-color);
+}
+
+/* projects list Лист с проектами*/
+.projects {
+  padding-bottom: 94px;
+}
+/* делаем из списка флекс элемент 
+с возможностью переноса на другую строку */
+.projects,
+.projects li {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* задаем ширину контента для 3 элементов в строке */
+.projects li {
+  width: calc((100% - 30px * 2) / 3);
+  background-color: var(--white-color);
+  border: 1px solid #eeeeee;
+}
+/* задаем нижний отступ от изображения в карточке */
+.card-img {
+  padding-bottom: 20px;
+}
+
+/* задаем позицию текста, и отступы описанию карточки */
+.card-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 20px;
+}
+/* убираем дефолтные отступы */
+/* задаем отступ снизу заголовку карточки */
+.projects-link .title {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+/* убираем дефолтные отступы */
+.projects-link p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* каждый не первый из трех элементов li будет отодвигаться от левого соседа на 30 пикселей */
+.projects li:not(:nth-child(3n + 1)) {
+  margin-left: 25px;
+  /* border: 1px solid tomato; */
+}
+/* каждый после третьего элемент li будет отодвигаться от верхней строки на 30 пикселей */
+.projects li:nth-child(n + 4) {
+  margin-top: 30px;
+}
+
+/* footer */
+.address {
+  color: var(--white-color);
+  font-style: normal;
+}
+.street {
+  color: var(--white-color);
+  font-style: normal;
+}
+/* footer contacts links */
+.address a {
+  color: var(--footer-link-color);
+  font-style: normal;
+}
+/* portfolio projects задаем основной шрифт списка проектов */
+.projects {
+  font-size: 16px;
+  line-height: 1.87;
+}
+/* projects title */
+.projects .title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
