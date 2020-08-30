@@ -18,12 +18,13 @@
     <header class="header">
       <!-- div container -->
       <div class="container flex">
-        <!-- Logo -->
-        <a class="logo" href="./index.html"
-          ><span class="logo-head">Web</span>Studio</a
-        >
-        <!-- Main links -->
+        <!-- navigation -->
         <nav class="nav">
+          <!-- Logo -->
+          <a class="logo" href="./index.html"
+            ><span class="logo-head">Web</span>Studio</a
+          >
+          <!-- Main links -->
           <ul class="nav-links list">
             <li><a class="link" href="./index.html">Студия</a></li>
             <li>
@@ -56,19 +57,31 @@
         <!-- h2 need to hide (Заголовок для семантики, нужно будет скрыть)  -->
         <!-- валидатор ругается из-за отсутствия этого заголовка -->
         <!-- <h2 class="hide-head">Фильтр</h2> -->
-        <button class="button" type="button">Все</button>
-        <button class="button" type="button">Веб-сайт</button>
-        <button class="button" type="button">Приложения</button>
-        <button class="button" type="button">Дизайн</button>
-        <button class="button" type="button">Маркетинг</button>
+        <ul class="filter-list list">
+          <li class="item">
+            <button class="button" type="button">Все</button>
+          </li>
+          <li class="item">
+            <button class="button" type="button">Веб-сайт</button>
+          </li>
+          <li class="item">
+            <button class="button" type="button">Приложения</button>
+          </li>
+          <li class="item">
+            <button class="button" type="button">Дизайн</button>
+          </li>
+          <li class="item">
+            <button class="button" type="button">Маркетинг</button>
+          </li>
+        </ul>
       </div>
       <!-- Projects section -->
       <!-- div projects -->
-      <div class="container flex">
+      <div class="container projects flex">
         <!-- h2 need to hide (заголовок для семантики нужно будет скрыть)-->
         <!-- <h2 class="hide-head">Наши проекты</h2> -->
         <!-- list of projects -->
-        <ul class="projects list">
+        <ul class="projects-list list">
           <li>
             <a class="projects-link" href="">
               <!-- картинка карточки -->
@@ -235,7 +248,7 @@
             <!-- contacts -->
             <a class="link" href="mailto:info@example.com"
               >info&commat;example.com</a
-            ><br />
+            >
             <a class="link" href="tel:+380991111111">+38 099 111 11 11</a>
           </address>
         </div>
