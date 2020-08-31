@@ -8,6 +8,7 @@
  
  вторичный цвет фона #2F303A;
  третий цвет фона #F5F4FA;
+ цвет фона градиента героя rgba(47, 48, 58, 0.4)
  
 */
 /* устанавливаем тип блочной модели для документа */
@@ -29,6 +30,7 @@ html {
   --alt-bg-color: #f5f4fa;
   --secondary-bg-color: #2f303a;
   --footer-link-color: rgba(255, 255, 255, 0.6);
+  --hero-gradient-color: rgba(47, 48, 58, 0.4);
 }
 body {
   background-color: var(--white-color);
@@ -158,8 +160,16 @@ a {
   text-align: center;
   margin: 0 auto;
   padding: 200px 0;
+  /* hero background */
+  background-image: linear-gradient(
+      to right,
+      var(--hero-gradient-color),
+      var(--hero-gradient-color)
+    ),
+    url("../img/hero-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
 /* hero, footer заливка фона*/
 .hero,
 .footer {
