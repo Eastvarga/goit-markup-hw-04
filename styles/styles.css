@@ -5,7 +5,7 @@
  цвет акцент #2196F3;
  второй цвет текста #FFFFFF;
  цвет футер ссылки rgba(255, 255, 255, 0.6);
- 
+ цвет иконок компании #AFB1B8;
  вторичный цвет фона #2F303A;
  третий цвет фона #F5F4FA;
  цвет фона градиента героя rgba(47, 48, 58, 0.4)
@@ -26,7 +26,7 @@ html {
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --white-color: #ffffff;
-
+  --icon-color: #afb1b8;
   --alt-bg-color: #f5f4fa;
   --secondary-bg-color: #2f303a;
   --footer-link-color: rgba(255, 255, 255, 0.6);
@@ -298,9 +298,6 @@ a {
 /* section title заголовок: шрифты, убираем дефолтные марджины*/
 .section-title {
   margin: 0 auto 50px;
-  /* margin-bottom: 50px;
-  margin-left: auto;
-  margin-right: auto; */
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -370,37 +367,67 @@ a {
   padding-bottom: 30px;
 }
 /* clients section */
+/* задаем размер иконок компании*/
 .clients .item {
   margin: 0;
   width: calc((100% - 30px * 5) / 6);
   height: 90px;
 }
-
+/* определяем ссылки для иконок. размер цвет границы */
 .clients-link {
   display: flex;
   margin: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid #afb1b8;
+  color: var(--icon-color);
+  border: 1px solid var(--icon-color);
   border-radius: 4px;
   justify-content: center;
   align-items: center;
 }
+/* цвет иконок при ховере */
 .clients-link:hover {
-  border: 1px solid var(--accent-color);
+  border-color: var(--accent-color);
   color: var(--accent-color);
 }
+/* расстояние между иконками-ссылками */
 .clients .item:not(:nth-child(6n + 1)) {
   margin-left: 30px;
 }
+/* иконка компании */
 .ya-and-co {
   width: 44px;
   height: 49px;
   fill: currentColor;
 }
+/* иконка компании */
 .company-tagline-here {
   width: 40px;
   height: 52px;
+  fill: currentColor;
+}
+/* иконка компании */
+.company {
+  width: 41px;
+  height: 43px;
+  fill: currentColor;
+}
+/* иконка компании */
+.foster-peters {
+  width: 80px;
+  height: 42px;
+  fill: currentColor;
+}
+/* иконка компании */
+.brand {
+  width: 59px;
+  height: 47px;
+  fill: currentColor;
+}
+/* иконка компании */
+.company-tag-line {
+  width: 88px;
+  height: 45px;
   fill: currentColor;
 }
 
