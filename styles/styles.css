@@ -173,9 +173,17 @@ a {
 /* Секция героя */
 /* центрируем текст в герое */
 .hero {
+  display: block;
+
+  text-align: center;
+  margin: 0 auto;
+  /* padding: 200px 0; */
+}
+.hero-bg {
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
+  max-width: 1600px;
+  height: auto;
   margin: 0 auto;
   padding: 200px 0;
   /* hero background */
@@ -187,7 +195,9 @@ a {
     url("../img/hero-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
+
 /* hero, footer заливка фона*/
 .hero,
 .footer {
@@ -366,26 +376,42 @@ a {
 .our-team p {
   margin: 0 0 16px 0;
 }
+
+/* размер списка внутри карточки */
 .social {
   width: calc(100% - 32px * 2);
   margin: 0 auto;
   padding-bottom: 30px;
 }
-.social .item {
+/* размеры иконок в списке */
+.social .item,
+.div-follow .item {
   width: 44px;
   height: 44px;
 }
-.social-link {
+
+/* общие настройки для иконок */
+.icon {
   margin: 0;
   width: 100%;
   height: 100%;
-  color: var(--icon-color);
-  background-color: var(--white-color);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
 }
-.social .item:not(:nth-child(4n + 1)) {
+/* цвет иконок социал */
+.social-link {
+  color: var(--icon-color);
+  background-color: var(--white-color);
+}
+/* цвет иконок в футере */
+.follow-link {
+  color: var(--white-color);
+  background-color: var(--footer-icon-bg-color);
+}
+/* отступы для иконок-ссылок */
+.social .item:not(:nth-child(4n + 1)),
+.div-follow .item:not(:nth-child(4n + 1)) {
   margin-left: 10px;
 }
 /* clients section */
@@ -395,7 +421,7 @@ a {
   width: calc((100% - 30px * 5) / 6);
   height: 90px;
 }
-/* определяем ссылки для иконок. размер цвет границы */
+/* определяем ссылки для иконок. размер, цвет границы */
 .clients-link {
   display: flex;
   margin: 0;
@@ -407,6 +433,7 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 /* цвет иконок при ховере */
 .clients-link:hover {
   border-color: var(--accent-color);
@@ -478,11 +505,13 @@ a {
   display: block;
   margin: 9px 0 0;
 }
+/* размер блока соцсетей, подтягивание элементов вверх */
 .div-follow {
   width: calc((100% - 30px * 3) / 4);
   margin: 0 0 0 30px;
+  align-content: flex-start;
 }
-
+/* заголовок соцсетей*/
 .div-follow .title {
   margin: 0 auto 20px 0;
   padding-top: 12px;
@@ -494,28 +523,14 @@ a {
   text-align: left;
   text-transform: uppercase;
 }
-.div-follow .item {
-  width: 44px;
-  height: 44px;
-}
-.div-follow .item:not(:nth-child(4n + 1)) {
-  margin-left: 10px;
-}
-.follow-link {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--white-color);
-  background-color: var(--footer-icon-bg-color);
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-}
+
+/* цвет иконок при ховере */
 .follow-link:hover,
 .social-link:hover {
   background-color: var(--accent-color);
   color: var(--white-color);
 }
+/* иконки */
 .instagram,
 .linkedin {
   width: 20px;
@@ -532,11 +547,12 @@ a {
   height: 21px;
   fill: currentColor;
 }
-
+/* адресс */
 .address {
   color: var(--white-color);
   font-style: normal;
 }
+
 .street {
   color: var(--white-color);
   font-style: normal;
@@ -561,8 +577,6 @@ a {
   padding: 6px 22px;
   border: 1px solid transparent;
   border-radius: 4px;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
 
   color: var(--title-text-color);
   background-color: var(--alt-bg-color);
@@ -582,6 +596,8 @@ a {
 .button:focus {
   color: var(--white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* projects list Лист с проектами*/
@@ -596,10 +612,20 @@ a {
   flex-wrap: wrap;
 }
 /* задаем ширину контента для 3 элементов в строке */
-.projects-list li {
+.projects-list > li {
   width: calc((100% - 30px * 2) / 3);
+}
+/* задаем границы ссылкам */
+.projects-link {
+  width: 100%;
   background-color: var(--white-color);
   border: 1px solid #eeeeee;
+}
+/* задаем тени при наведении фокусе */
+.projects-link:hover,
+.projects-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* задаем позицию текста, и отступы описанию карточки */
