@@ -475,21 +475,21 @@ a {
 .footer {
   padding: 60px 0;
 }
+.footer .container {
+  align-items: baseline;
+}
 /* делаем контент лого+адресс шириной на четверть от ширины страницы */
 .div-address {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+  /* flex-wrap: wrap; */
   width: calc((100% - 30px * 3) / 4);
 }
 /* убираем дефолтные отступы не полагаемся на наследование */
 .footer .logo {
-  margin: 0 auto 20px 0;
+  display: block;
+  margin: 0 0 20px 0;
 }
-/* убираем дефолтные отступы не полагаемся на наследование */
-.address {
-  width: 220px;
-  margin: 0 auto 0 0;
-}
+
 /* задаем ссылкам вертикальные отступы */
 .address a {
   display: block;
@@ -503,8 +503,8 @@ a {
 }
 /* заголовок соцсетей*/
 .div-follow .title {
-  margin: 0 auto 20px 0;
-  padding-top: 12px;
+  margin: 0 0 20px 0;
+  /* padding-top: 12px; */
   color: var(--white-color);
   font-weight: 700;
   font-size: 14px;
