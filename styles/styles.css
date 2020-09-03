@@ -177,16 +177,7 @@ a {
 
   text-align: center;
   margin: 0 auto;
-  /* padding: 200px 0; */
-}
-.hero-bg {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1600px;
-  height: auto;
-  margin: 0 auto;
   padding: 200px 0;
-  /* hero background */
   background-image: linear-gradient(
       to right,
       var(--hero-gradient-color),
@@ -195,7 +186,6 @@ a {
     url("../img/hero-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /* hero, footer заливка фона*/
